@@ -25,10 +25,6 @@ function App() {
         fetchCourses()
     }, [])
 
-    function deleteCourse(id) {
-        const afterDeleting = courses.filter((course) => course.id !== id);
-        setCourses(afterDeleting);
-    }
 
     return (
         <div>
@@ -39,7 +35,7 @@ function App() {
                     {
                         courses.length === 0 ?
                             <div>any</div> :
-                            <div><CourseList courses={courses} removeCourse={deleteCourse} /></div>
+                            <div><CourseList courses={courses} /></div>
                     }
                 </>
             }
